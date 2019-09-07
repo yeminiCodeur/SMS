@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: UahbGes
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: haida
+Implementation-Vendor-Id: com.info.haidara.sid
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/UahbGes
+Created-By: Maven Integration for Eclipse
+

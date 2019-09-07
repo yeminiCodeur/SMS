@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+</head>
+<body>
+	<div th:fragment="sideNavBar">
+		<div id="wrapper">
+			<!-- Sidebar -->
+<ul class="sidebar navbar-nav bg-success">
+	<li class="nav-item"><a class="nav-link" href="index.html">
+			<span><img alt="alt" src="../medias/photos/user.jpg"
+				class="fa fa-user fa" height="40" width="40">Abouba Haidara</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link" href="charts.html">
+			<i class="fas fa-fw fa-chart-area"></i> <span>Mon profil</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link" href="index.html">
+			<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
+	</a></li>
+	<li class="nav-item dropdown"><a
+		class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
+		role="button" data-toggle="dropdown" aria-haspopup="true"
+		aria-expanded="false"> <i class="fas fa-fw fa-users"></i> <span>Clients</span>
+	</a>
+		<div class="dropdown-menu" aria-labelledby="pagesDropdown">
+			<h6 class="dropdown-header">Login Screens:</h6>
+			<a class="dropdown-item" href="login.html">Login</a> <a
+				class="dropdown-item" href="register.html">Register</a> <a
+				class="dropdown-item" href="forgot-password.html">Forgot
+				Password</a>
+			<div class="dropdown-divider"></div>
+			<h6 class="dropdown-header">Other Pages:</h6>
+			<a class="dropdown-item" href="404.html">404 Page</a> <a
+				class="dropdown-item active" href="blank.html">Blank Page</a>
+		</div></li>
+	<li class="nav-item dropdown"><a
+		class="nav-link dropdown-toggle" href="#" id="pagesDropdown1"
+		role="button" data-toggle="dropdown" aria-haspopup="true"
+		aria-expanded="false"> <i class="fas fa-fw fa-users"></i> <span>Entreprise</span>
+	</a>
+		<div class="dropdown-menu" aria-labelledby="pagesDropdown1">
+			<h6 class="dropdown-header">Login Screens:</h6>
+			<a class="dropdown-item" href="login.html">Login</a> <a
+				class="dropdown-item" href="register.html">Register</a> <a
+				class="dropdown-item" href="forgot-password.html">Forgot
+				Password</a>
+			<div class="dropdown-divider"></div>
+			<h6 class="dropdown-header">Other Pages:</h6>
+			<a class="dropdown-item" href="404.html">404 Page</a> <a
+				class="dropdown-item active" href="blank.html">Blank Page</a>
+		</div></li>
+	<li class="nav-item dropdown"><a
+		class="nav-link dropdown-toggle" href="#" id="pagesDropdown2"
+		role="button" data-toggle="dropdown" aria-haspopup="true"
+		aria-expanded="false"> <i class="fas fa-fw fa-users"></i> <span>Equipes</span>
+	</a>
+		<div class="dropdown-menu" aria-labelledby="pagesDropdown2">
+			<h6 class="dropdown-header">Login Screens:</h6>
+			<a class="dropdown-item" href="login.html">Login</a> <a
+				class="dropdown-item" href="register.html">Register</a> <a
+				class="dropdown-item" href="forgot-password.html">Forgot
+				Password</a>
+			<div class="dropdown-divider"></div>
+			<h6 class="dropdown-header">Other Pages:</h6>
+			<a class="dropdown-item" href="404.html">404 Page</a> <a
+				class="dropdown-item active" href="blank.html">Blank Page</a>
+		</div></li>
+
+	<li class="nav-item"><a class="nav-link" href="charts.html">
+			<i class="fas fa-fw fa-calendar"></i> <span>Agenda</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link" href="charts.html">
+			<i class="fas fa-fw fa-chart-area"></i> <span>Charts</span>
+	</a></li>
+	<li class="nav-item"><a class="nav-link" href="tables.html">
+			<i class="fas fa-fw fa-table"></i> <span>Tables</span>
+	</a></li>
+</ul>
+<!-- /#wrapper -->
+<div id="content-wrapper">
+	<div class="container-fluid">
+<!-- Page Content -->
+<div class="row">
+	<div class="col-md-10">
+	  <div class="card">
+			<div class="card-title bg-primary text-center text-white">
+				<h4>
+					<a href="" class=" text-white" th:text="${filiere.filiere.nomFilere}"></a>
+				</h4>
+			</div>
+			<div class="card-body">		
+				Type Filiere: <span
+					th:text="${filiere.filiere.typefiliere.nomtype}"></span><br />
+			 Cordinateur : Haidara Abouba
+			 <div class="card-title bg-primary text-white">
+			     <ul class="navbar-nav mr-auto">
+			      <li class="nav-item">Semestres: S1| <span>0</span></li>
+			       <li class="nav-item">
+			            <div class="py-0"> 	
+			             <div class="row grid-divider float-right">
+			             <div class="my-1 col-md-5 ">
+			                   <a class="btn  btn-success btn-sm fa fa-plus fa"
+			            data-toggle="collapse" href="#multiCollapseExample"
+			            role="button" aria-expanded="false"
+			           aria-controls="multiCollapseExample1">Groupe</a> 
+			               </div>
+			              <div class=" my-1 col-md-5 ">
+			                  <a class="btn  btn-success btn-sm fa fa-plus fa"
+			            data-toggle="collapse" href="#m1"
+			            role="button" aria-expanded="false"
+			           aria-controls="m1"> Modules</a> 
+			               </div>
+			            </div>
+			          </div>
+			         </li>			        		       
+			     </ul>
+			   </div>			   
+			   <div class="card-body">
+				 <div class="collapse multi-collapse" id="m1">
+					  <div class="card card-body">
+						 <div class="card-title bg-info text-white">
+			             <ul class="navbar-nav mr-auto">
+					       <li class="nav-item">Listes de Modules</li>
+					       <li class="nav-item"> 
+					           <a class="btn float-right btn-success btn-sm fa fa-plus fa"
+					            data-toggle="collapse" href="#multiCollapseExample2"
+					            role="button" aria-expanded="false"
+					           aria-controls="multiCollapseExample2"> Modules</a> 
+					        </li>			       
+			            </ul>
+			       </div>
+			   <div class="card-body">        
+				   <div class="collapse multi-collapse" id="multiCollapseExample2">
+					  <div class="card card-body">
+						 <div class="card-title bg-success text-white">
+			             <ul class="navbar-nav mr-auto">
+					       <li class="nav-item">Listes de Modules</li>
+					       <li class="nav-item"> 
+					           <a class="btn float-right btn-success btn-sm fa fa-plus fa"
+					            data-toggle="collapse" href="#multiCollapseExample3"
+					            role="button" aria-expanded="false"
+					           aria-controls="multiCollapseExample3"> Modules</a> 
+					        </li>			       
+			            </ul>
+			       </div>
+			   <div class="card-body">        		
+				    <div class="collapse multi-collapse" id="multiCollapseExample3">
+					  <div class="card card-body"  >
+						 <div class="card-title bg-danger text-white">
+			             <ul class="navbar-nav mr-auto">
+					       <li class="nav-item">Listes de Modules</li>
+					       <li class="nav-item"> 
+					           <a class="btn float-right btn-success btn-sm fa fa-plus fa"
+					            data-toggle="collapse" href="#multiCollapseExample4"
+					            role="button" aria-expanded="false"
+					           aria-controls="multiCollapseExample4">L.Composition</a> 
+					        </li>			       
+			            </ul>
+			       </div>
+			   <div class="card-body">        				
+				     <div class="collapse multi-collapse" id="multiCollapseExample4">
+						<div class="card card-body">
+						  <table class="table">
+					         <tr>
+						       <th>Type</th>
+						        <th>Voulme Horaire (VH)</th>
+						        <th>Enseignant</th>
+						         <th>NB.Gr</th>
+						       <th colspan="2">Action</th>
+						     </tr>
+					          <tr>
+					             <td></td>
+					             <td></td>
+					              <td></td>	
+					               <td></td>			     	    
+					              <td>
+					     	       <a class="btn btn-info btn-sm fa fa-edit fa" href="/"></a>
+					     	       <a class="btn btn-info btn-sm fa fa-edit fa" href="/"></a>
+					     	       <a class="btn btn-info btn-sm fa fa-edit fa" href="/"></a>
+					     	    </td>
+					         </tr>
+				          </table>						
+						 </div>							
+					 </div>
+			     </div> 								
+		       </div>
+		     </div>			
+		    </div>	 
+		  </div>
+		</div>	
+	  </div> 					
+    </div>
+   </div>
+ </div>   
+  </div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="card">
+			<div class="card-title bg-primary text-center text-white">
+				<h4></h4>
+			</div>
+			<div class="card-body">
+				<div class="row">fff</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+</div>
+
+<!-- /.container-fluid -->
+<!-- Sticky Footer -->
+	<footer class="sticky-footer">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright © Your Website 2018</span>
+			</div>
+		</div>
+	</footer>
+
+</div>
+<!-- /.content-wrapper -->
+
+	</div>
+</body>
+</html>

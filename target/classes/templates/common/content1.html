@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+
+	<div th:fragment="content1">
+		<div class="container">
+			<div class="col-md-12" th:each="d:${listDepartement}">
+				<div class="card" >
+					<div class="card-title bg-primary text-center text-white">
+						<h4 th:text="${d.nomDept}"></h4>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-6">
+								<table class="table table-striped">
+								<thead>
+								 <tr ><th colspan="5">Formation Initiale</th></tr>									
+									<tr>
+										<th>Type</th>
+										<th>Code</th>
+										<th>Cord</th>
+										 <th>Etat</th>										
+										<th colspan="2">Operation</th>
+									</tr>
+									</thead>									
+									<tbody th:each="f:${d.fileres}">
+									<tr th:each="forma:${f.formations}" th:if="${forma.class.simpleName == 'FormationInitiale'}">
+									    <td th:text="${f.typefiliere.slug}"> </td>
+									    <td th:text="${forma.code}"> </td>
+									    <td> Cordinateur</td>
+									      <td th:switch="${forma.etat}" >  
+									         <div   th:case=true class="text-success">Ouverte</div>
+									         <div   th:case=false class="text-danger">Fermee</div>
+									      </td>
+									     <td>
+								     <a href="" th:href="@{${url}(slug=${forma.code})}" class="btn btn-success btn-sm fa fa-eye fa" title="Consulter le details"></a></td>
+								          <td><a   data-fancybox data-type="ajax" data-src="/edit/1" data-filter="#two" href="javascript:;"
+								           title="Editer" class="btn  btn-info btn-sm fa fa-edit fa"></a></td>								          																
+									   </tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-md-6">							
+							 <table class="table table-striped">
+							       <thead>
+							     <tr><th colspan="5">Formation Continue</th></tr>
+									<tr>
+									    <th>Type</th>
+										<th>Nom</th>
+										<th>Cord</th>										
+										<th colspan="2">Operation</th>
+									</tr>
+									</thead>
+									<tbody th:each="f:${d.fileres}">
+									<tr th:each="forma:${f.formations}" th:if="${forma.class.simpleName == 'FourmationContinue'}">
+									    <td th:text="${f.typefiliere.slug}"> </td>
+									    <td th:text="${forma.nom}"> </td>
+									    <td> Cordinateur</td>
+									     <td><a href="" th:href="@{${url}(slug=${forma.nom})}" title="consulter le detail" class="btn btn-success btn-sm fa fa-eye"></a></td>
+								          <td><a  data-fancybox data-type="ajax" data-src="/edit/1" data-filter="#two" href="javascript:;" 
+								          class="btn  btn-info btn-sm fa fa-edit fa"></a></td>								          																
+									   </tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<br />
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
